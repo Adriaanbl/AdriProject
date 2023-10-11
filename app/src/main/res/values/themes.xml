@@ -13,4 +13,20 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="gradient_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/gradient_button</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="PrincipalTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+
+        <item name="android:buttonStyle">@style/gradient_button</item>
+    </style>
+
+
 </resources>
