@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Estado predeterminado -->
-    <item android:state_enabled="true" android:drawable="@drawable/gradient_button" />
-
-    <!-- Estado cuando el ratón pasa por encima (hover) -->
-    <item android:state_enabled="true" android:state_focused="true" android:drawable="@drawable/gradient_button" />
-</selector>

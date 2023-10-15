@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import es.abd.adriproject.databinding.FragmentStartPageBinding
 
-class fragmentStartPage : Fragment(), View.OnClickListener, View.OnFocusChangeListener  {
+class fragmentStartPage : Fragment(), View.OnClickListener {
 
     private var listener : fragmentStartPageListener? = null
 
@@ -28,7 +28,6 @@ class fragmentStartPage : Fragment(), View.OnClickListener, View.OnFocusChangeLi
         binding = FragmentStartPageBinding.inflate(layoutInflater,container,false)
         val view = binding.root
 
-        binding.button.onFocusChangeListener = this
 
         return view
 
@@ -36,18 +35,6 @@ class fragmentStartPage : Fragment(), View.OnClickListener, View.OnFocusChangeLi
 
     override fun onClick(v: View?) {
 
-    }
-
-    override fun onFocusChange(v: View?, hasFocus: Boolean) {
-
-        val hoverAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.button_hover_anim)
-
-
-        if (hasFocus) {
-            binding.button.startAnimation(hoverAnim)
-        } else {
-            binding.button.clearAnimation()
-        }
     }
 
     interface fragmentStartPageListener{
