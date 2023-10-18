@@ -18,4 +18,6 @@
     <color name="firebrick">#b22222</color>
     <color name="darkred">#8b0000</color>
 
+    <color name="transparent">#00FAFAFA</color>
+
 </resources>
