@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AdriProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.AdriProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -16,7 +16,7 @@
 
 
     <!-- Theme by Adrian Blasco -->
-    <style name="PrincipalTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="PrincipalTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/lightcoral</item>
         <item name="colorPrimaryVariant">@color/indianred</item>
