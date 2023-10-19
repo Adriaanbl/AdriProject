@@ -3,6 +3,6 @@
     <string name="app_name">AdriProject</string>
     <string name="LoginButton">se connecter</string>
     <string name="RegisterButton">enregistrer</string>
-    <string name="NotLoggedButton">Se connecter sans se connecter</string>
+    <string name="NotLoggedButton">entrez sans vous connecter</string>
 
 </resources>

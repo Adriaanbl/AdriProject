@@ -10,7 +10,7 @@
         android:id="@+id/menuFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="es.abd.adriproject.fragmentStartPage">
+        android:name="es.abd.adriproject.FragmentStartPage">
     </androidx.fragment.app.FragmentContainerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
