@@ -11,7 +11,7 @@ import es.abd.adriproject.databinding.FragmentLoginBinding
 
 class FragmentLogin : Fragment(), View.OnClickListener {
 
-    private var listener : FragmentLogin.fragmentLoginListener? = null
+    private var listener : fragmentLoginListener? = null
 
     private lateinit var binding: FragmentLoginBinding
 
@@ -19,23 +19,26 @@ class FragmentLogin : Fragment(), View.OnClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentLoginBinding.inflate(layoutInflater,container,false)
 
 
         val videoView = binding.videoView
-        videoView.setVideoURI(Uri.parse("android.resource://app/src/main/res/drawable/WADEN.mp4"))
+        val videoPath = "android.resource://" + requireContext().packageName + "/" + R.raw.backvideo
+        videoView.setVideoURI(Uri.parse(videoPath))
         videoView.setOnPreparedListener { mp ->
             mp.isLooping = true
-            videoView.start()
+
         }
+
+        videoView.start()
 
 
         return binding.root
 
     }
 
-    override fun onClick(p0: View?) {
+    override fun onClick(p0: View) {
         TODO("Not yet implemented")
     }
 

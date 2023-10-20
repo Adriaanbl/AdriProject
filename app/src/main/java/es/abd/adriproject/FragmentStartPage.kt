@@ -33,11 +33,7 @@ class FragmentStartPage : Fragment(), View.OnClickListener {
 
         binding.LoginButton.setOnClickListener(this)
 
-
         return binding.root
-
-
-
 
     }
 
