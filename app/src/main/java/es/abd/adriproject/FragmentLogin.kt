@@ -28,8 +28,8 @@ class FragmentLogin : Fragment(), View.OnClickListener {
         videoView.setVideoURI(Uri.parse(videoPath))
         videoView.setOnPreparedListener { mp ->
             mp.isLooping = true
-
         }
+
 
         videoView.start()
 
