@@ -8,16 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import es.abd.adriproject.databinding.FragmentStartPageBinding
 
-class FragmentStartPage : Fragment(), View.OnClickListener {
+class StartPageFragment : Fragment(), View.OnClickListener {
 
-    private var listener : fragmentStartPageListener? = null
+    private var listener : startPageFragmentListener? = null
 
     private lateinit var binding: FragmentStartPageBinding
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        if (context is fragmentStartPageListener){
+        if (context is startPageFragmentListener){
             listener = context
         }else {
             throw Exception("EXCEPPCION")
@@ -48,7 +48,7 @@ class FragmentStartPage : Fragment(), View.OnClickListener {
         listener = null
     }
 
-    interface fragmentStartPageListener{
+    interface startPageFragmentListener{
         fun onLoginButtonClicked()
     }
 

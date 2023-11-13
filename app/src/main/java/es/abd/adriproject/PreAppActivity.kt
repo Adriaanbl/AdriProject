@@ -4,11 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import android.text.TextUtils.replace
 import es.abd.adriproject.databinding.ActivityMainBinding
 
 
-class MainActivity : AppCompatActivity(), FragmentStartPage.fragmentStartPageListener {
+class PreAppActivity : AppCompatActivity(), StartPageFragment.startPageFragmentListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity(), FragmentStartPage.fragmentStartPageLis
     override fun onLoginButtonClicked() {
         supportFragmentManager.commit {
             setReorderingAllowed(true)
-            replace<FragmentLogin>(R.id.fragment_start_page)
+            replace<LoginFragment>(R.id.fragment_start_page)
             addToBackStack(null)
         }
     }

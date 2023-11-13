@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import es.abd.adriproject.databinding.FragmentLoginBinding
 
 
-class FragmentLogin : Fragment(), View.OnClickListener {
+class LoginFragment : Fragment(), View.OnClickListener {
 
     private var listener : fragmentLoginListener? = null
 
