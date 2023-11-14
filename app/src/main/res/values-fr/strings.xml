@@ -4,5 +4,7 @@
     <string name="LoginButton">se connecter</string>
     <string name="RegisterButton">enregistrer</string>
     <string name="NotLoggedButton">entrez sans vous connecter</string>
+    <string name="UsernameLogInput">Nom d\'utilisateur</string>
+    <string name="Password">Mot de passe</string>
 
 </resources>

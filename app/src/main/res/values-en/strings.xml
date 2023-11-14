@@ -4,5 +4,7 @@
     <string name="LoginButton">Login</string>
     <string name="RegisterButton">Register</string>
     <string name="NotLoggedButton">Proceed without logging in</string>
+    <string name="UsernameLogInput">Username</string>
+    <string name="Password">Password</string>
 
 </resources>

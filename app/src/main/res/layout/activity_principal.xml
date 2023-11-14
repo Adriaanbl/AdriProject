@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".PrincipalActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/menuFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="es.abd.adriproject.MenuContenedorFragment">
+    </androidx.fragment.app.FragmentContainerView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

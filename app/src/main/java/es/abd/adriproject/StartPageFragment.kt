@@ -32,6 +32,7 @@ class StartPageFragment : Fragment(), View.OnClickListener {
         binding = FragmentStartPageBinding.inflate(layoutInflater,container,false)
 
         binding.LoginButton.setOnClickListener(this)
+        binding.NotLoggedButton.setOnClickListener(this)
 
         return binding.root
 
@@ -40,6 +41,7 @@ class StartPageFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View) {
         when(v.id){
             R.id.LoginButton -> listener?.onLoginButtonClicked()
+            R.id.NotLoggedButton -> listener?.onNotLoggedButtonClicked()
         }
     }
 
@@ -50,6 +52,7 @@ class StartPageFragment : Fragment(), View.OnClickListener {
 
     interface startPageFragmentListener{
         fun onLoginButtonClicked()
+        fun onNotLoggedButtonClicked()
     }
 
 
