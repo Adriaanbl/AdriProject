@@ -15,29 +15,18 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
     override fun onWomanButtonClicked() {
         supportFragmentManager.commit {
             setReorderingAllowed(true)
-            setCustomAnimations(R.anim.slide_in1, 0, 0, 0)
             replace<WomanFragment>(R.id.fragment2)
         }
     }
 
 
     override fun onManButtonClicked() {
-        val animations = arrayOf(
-            R.anim.slide_in1,
-            R.anim.slide_in2,
-            R.anim.slide_in3,
-            R.anim.slide_in4,
-            R.anim.slide_in5
-        )
-
-        for (i in animations.indices) {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                setCustomAnimations(animations[i], 0, 0, 0)
-                replace<WomanFragment>(R.id.fragment2)
-                setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                replace<ManFragment>(R.id.fragment2)
+
             }
-        }
+
     }
 
 }
