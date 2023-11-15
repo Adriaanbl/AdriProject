@@ -18,35 +18,63 @@
 
     </ImageView>
 
+
     <TextView
-        android:id="@+id/textView2"
-        style="@style/appStyleFont"
+        android:id="@+id/collectionText"
+        style="@style/appStyleFont_WHITE_"
         android:layout_width="156dp"
         android:layout_height="34dp"
-        android:layout_marginEnd="92dp"
         android:gravity="start"
         android:text="@string/COLLECTION"
         android:textAlignment="textStart"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintVertical_bias="0.211" />
 
-    <TextView
-        android:id="@+id/textView3"
-        style="@style/appStyleFont"
+    <Button
+        android:id="@+id/newInButton"
+        style="@style/appStyleButtonFont_WHITE_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="61dp"
-        android:layout_marginEnd="75dp"
         android:text="@string/newIn"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.302"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintHorizontal_bias="0.328"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintVertical_bias="0.258" />
+
+    <Button
+        android:id="@+id/womanButton"
+        style="@style/appStyleButtonFont_WHITE_"
+        android:layout_width="41dp"
+        android:layout_height="224dp"
+        android:text="@string/womanButton"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintVertical_bias="0.46" />
+
+    <Button
+        android:id="@+id/manButton"
+        style="@style/appStyleButtonFont_WHITE_"
+        android:layout_width="40dp"
+        android:layout_height="144dp"
+        android:text="@string/manButton"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintVertical_bias="0.79" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

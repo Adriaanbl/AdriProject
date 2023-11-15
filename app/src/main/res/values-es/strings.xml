@@ -8,5 +8,13 @@
     <string name="Password">Contraseña</string>
     <string name="COLLECTION" >COLECCIÓN</string>
     <string name="newIn">NOVEDADES</string>
+    <string name="womanButton">WOMAN</string>
+    <string name="manButton">MAN</string>
+    <string name="Suits">TRAJES</string>
+    <string name="Tops">PARTES SUPERIORES</string>
+    <string name="Dresses">VESTIDOS</string>
+    <string name="Coats_Jackets">ABRIGOS Y CHAQUETAS</string>
+    <string name="Tracksuits">SURVÊTEMENTS</string>
+    <string name="Bottoms">PARTES INFERIORES</string>
 
 </resources>

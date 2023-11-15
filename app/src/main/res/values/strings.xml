@@ -5,10 +5,18 @@
     <string name="RegisterButton">Register</string>
     <string name="NotLoggedButton">Proceed without logging in</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="UsernameLogInput">Username</string>
     <string name="Password">Password</string>
-    <string name="COLLECTION" >COLLECTION</string>
+    <string name="COLLECTION">COLLECTION</string>
     <string name="newIn">NEW IN</string>
+    <string name="womanButton">WOMAN</string>
+    <string name="manButton">MAN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Suits">SUITS</string>
+    <string name="Tops">TOPS</string>
+    <string name="Dresses">DRESSES</string>
+    <string name="Coats_Jackets">COATS / JACKETS</string>
+    <string name="Tracksuits">TRACKSUITS</string>
+    <string name="Bottoms">BOTTOMS</string>
 
 </resources>

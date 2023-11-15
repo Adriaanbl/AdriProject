@@ -8,5 +8,13 @@
     <string name="Password">Password</string>
     <string name="COLLECTION" >COLLECTION</string>
     <string name="newIn">NEW IN</string>
+    <string name="womanButton">WOMAN</string>
+    <string name="manButton">MAN</string>
+    <string name="Suits">SUITS</string>
+    <string name="Tops">TOPS</string>
+    <string name="Dresses">DRESSES</string>
+    <string name="Coats_Jackets">COATS / JACKETS</string>
+    <string name="Tracksuits">TRACKSUITS</string>
+    <string name="Bottoms">BOTTOMS</string>
 
 </resources>
