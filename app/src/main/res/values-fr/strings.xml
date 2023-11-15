@@ -6,5 +6,7 @@
     <string name="NotLoggedButton">entrez sans vous connecter</string>
     <string name="UsernameLogInput">Nom d\'utilisateur</string>
     <string name="Password">Mot de passe</string>
+    <string name="COLLECTION" >COLLECTION</string>
+    <string name="newIn">NOUVEAUTES</string>
 
 </resources>

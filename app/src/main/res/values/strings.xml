@@ -8,5 +8,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="UsernameLogInput">Username</string>
     <string name="Password">Password</string>
+    <string name="COLLECTION" >COLLECTION</string>
+    <string name="newIn">NEW IN</string>
 
 </resources>

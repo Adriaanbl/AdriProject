@@ -50,6 +50,19 @@
         <item name="colorSecondaryVariant">@color/white</item>
     </style>
 
+    <style name="appStyleFont">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+
+    <style name="appStyleButtonFont">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+        <item name="backgroundColor">@color/transparent</item>
+    </style>
+
+
+
 
 
 </resources>
