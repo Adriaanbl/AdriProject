@@ -49,6 +49,7 @@ class SelectionFragment : Fragment(), View.OnClickListener {
     interface FragmentSelectionListener{
         fun onWomanButtonClicked()
         fun onManButtonClicked()
+
     }
 
 

@@ -9,31 +9,60 @@ import android.view.animation.AnimationUtils
 import es.abd.adriproject.databinding.FragmentManBinding
 import es.abd.adriproject.databinding.FragmentWomanBinding
 
-class ManFragment : Fragment() {
+class ManFragment : Fragment(), View.OnClickListener {
 
     private var listener : FragmentManListener? = null
 
     private lateinit var binding: FragmentManBinding
+
+    private lateinit var recListFragment: RecListFragment
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentManBinding.inflate(layoutInflater,container,false)
+        recListFragment = RecListFragment()
+
+
+        binding.manMenuBottom.setOnClickListener(this)
+        binding.manMenuTracksuits.setOnClickListener(this)
+        binding.manMenuCoatsJackets.setOnClickListener(this)
+        binding.manMenuTops.setOnClickListener(this)
+        binding.manMenuSuits.setOnClickListener(this)
+
+        childFragmentManager.beginTransaction()
+            .replace(R.id.recyclerListProduct, recListFragment)
+            .commit()
 
         return binding.root
     }
+
+    override fun onClick(v: View) {
+        when(v.id){
+            R.id.manMenuBottom -> listener?.onManMenuButtonClicked(R.id.manMenuBottom)
+            R.id.manMenuTracksuits -> listener?.onManMenuButtonClicked(R.id.manMenuTracksuits)
+            R.id.manMenuCoatsJackets -> listener?.onManMenuButtonClicked(R.id.manMenuCoatsJackets)
+            R.id.manMenuTops -> listener?.onManMenuButtonClicked(R.id.manMenuTops)
+            R.id.manMenuSuits -> listener?.onManMenuButtonClicked(R.id.manMenuSuits)
+
+        }
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.button.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in1))
-        binding.button2.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in2))
-        binding.button3.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in3))
-        binding.button4.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in4))
-        binding.button5.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in5))
+        binding.manMenuBottom.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in1))
+        binding.manMenuTracksuits.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in2))
+        binding.manMenuCoatsJackets.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in3))
+        binding.manMenuTops.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in4))
+        binding.manMenuSuits.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in5))
     }
 
     interface FragmentManListener{
+        fun onManMenuButtonClicked(btn: Int)
 
     }
+
+
 
 }

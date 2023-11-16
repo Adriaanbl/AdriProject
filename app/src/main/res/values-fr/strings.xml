@@ -14,7 +14,8 @@
     <string name="Tops">HAUTS</string>
     <string name="Dresses">ROBES</string>
     <string name="Coats_Jackets">MANTEAUX ET VESTES</string>
-    <string name="Tracksuits">CONJUNTOS DEPORTIVOS</string>
+    <string name="Tracksuits">SURVÊTEMENTS</string>
     <string name="Bottoms">BAS</string>
+    <string name="Jumpsuits">COMBINAISONS</string>
 
 </resources>

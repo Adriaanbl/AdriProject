@@ -14,7 +14,8 @@
     <string name="Tops">PARTES SUPERIORES</string>
     <string name="Dresses">VESTIDOS</string>
     <string name="Coats_Jackets">ABRIGOS Y CHAQUETAS</string>
-    <string name="Tracksuits">SURVÊTEMENTS</string>
+    <string name="Tracksuits">CONJUNTOS DEPORTIVOS</string>
     <string name="Bottoms">PARTES INFERIORES</string>
+    <string name="Jumpsuits">MONOS</string>
 
 </resources>
