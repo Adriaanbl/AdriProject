@@ -33,13 +33,15 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
     override fun onManMenuButtonClicked(btn: Int) {
 
+
         val li: MutableList<Product> = mutableListOf()
 
         when (btn) {
             R.id.manMenuBottom -> {
                 li.addAll(
-                    Product("Bottom 1", R.drawable.product1, 19.99f),
-                    Product("Bottom 2", R.drawable.product2, 29.99f)
+                    listOf(Product("Bottom 1", R.drawable.product1, 19.99f),
+                        Product("Bottom 2", R.drawable.product2, 29.99f)
+                    )
                 )
             }
             R.id.manMenuTracksuits -> {
@@ -60,5 +62,12 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
             }
         }
         productAdapter?.updateData(li)
+
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            replace<RecListFragment>(R.id.fragment1)
+
+        }
+
     }
 }

@@ -15,7 +15,6 @@ class ManFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentManBinding
 
-    private lateinit var recListFragment: RecListFragment
 
 
     override fun onCreateView(
@@ -23,8 +22,6 @@ class ManFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentManBinding.inflate(layoutInflater,container,false)
-        recListFragment = RecListFragment()
-
 
         binding.manMenuBottom.setOnClickListener(this)
         binding.manMenuTracksuits.setOnClickListener(this)
@@ -32,21 +29,16 @@ class ManFragment : Fragment(), View.OnClickListener {
         binding.manMenuTops.setOnClickListener(this)
         binding.manMenuSuits.setOnClickListener(this)
 
-        childFragmentManager.beginTransaction()
-            .replace(R.id.recyclerListProduct, recListFragment)
-            .commit()
-
         return binding.root
     }
 
     override fun onClick(v: View) {
-        when(v.id){
+        when(v.id) {
             R.id.manMenuBottom -> listener?.onManMenuButtonClicked(R.id.manMenuBottom)
             R.id.manMenuTracksuits -> listener?.onManMenuButtonClicked(R.id.manMenuTracksuits)
             R.id.manMenuCoatsJackets -> listener?.onManMenuButtonClicked(R.id.manMenuCoatsJackets)
             R.id.manMenuTops -> listener?.onManMenuButtonClicked(R.id.manMenuTops)
             R.id.manMenuSuits -> listener?.onManMenuButtonClicked(R.id.manMenuSuits)
-
         }
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

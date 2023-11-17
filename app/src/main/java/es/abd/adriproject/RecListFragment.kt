@@ -21,7 +21,7 @@ class RecListFragment : Fragment() {
         recyclerViewFragment = RecListFragment()
 
 
-        if ()
+
 
         return binding.root
     }
