@@ -1,17 +1,20 @@
 package es.abd.adriproject
 
 import android.content.Context
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.io.Serializable
 
 class ProductAdapter (private val context: Context?,
                       private var products: MutableList<Product>,
                       private val mListener: (Product) -> Unit) :
-    RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(){
+    RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+
 
 
     fun updateData(newData: MutableList<Product>) {

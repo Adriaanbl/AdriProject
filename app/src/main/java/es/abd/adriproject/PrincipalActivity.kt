@@ -2,11 +2,13 @@ package es.abd.adriproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 
 class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelectionListener, ManFragment.FragmentManListener {
+
+    val li: MutableList<Product> = mutableListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
@@ -29,13 +31,11 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
     }
 
-    private var productAdapter: ProductAdapter? = null
+    private var productAdapter: ProductAdapter = ProductAdapter(this,li){product ->  }
 
     override fun onManMenuButtonClicked(btn: Int) {
 
-
-        val li: MutableList<Product> = mutableListOf()
-
+        li.clear()
         when (btn) {
             R.id.manMenuBottom -> {
                 li.addAll(
@@ -55,19 +55,26 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
             }
             R.id.manMenuSuits -> {
-
+                li.addAll(
+                    listOf(Product("zapas", R.drawable.product3, 69.99f),
+                    )
+                )
             }
             else -> {
-                // Acciones por defecto o manejo de casos no especificados
+
             }
         }
-        productAdapter?.updateData(li)
+        productAdapter.updateData(li)
+        val recListFragment = RecListFragment.newInstance(productAdapter)
 
         supportFragmentManager.commit {
             setReorderingAllowed(true)
-            replace<RecListFragment>(R.id.fragment1)
+            replace(R.id.fragment2, recListFragment)
+            addToBackStack(null)
 
         }
+
+
 
     }
 }

@@ -1,5 +1,6 @@
 package es.abd.adriproject
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +17,14 @@ class ManFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentManBinding
 
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentManListener) {
+            listener = context
+        } else {
+            throw RuntimeException("$context must implement YourListenerInterface")
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,13 +42,7 @@ class ManFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        when(v.id) {
-            R.id.manMenuBottom -> listener?.onManMenuButtonClicked(R.id.manMenuBottom)
-            R.id.manMenuTracksuits -> listener?.onManMenuButtonClicked(R.id.manMenuTracksuits)
-            R.id.manMenuCoatsJackets -> listener?.onManMenuButtonClicked(R.id.manMenuCoatsJackets)
-            R.id.manMenuTops -> listener?.onManMenuButtonClicked(R.id.manMenuTops)
-            R.id.manMenuSuits -> listener?.onManMenuButtonClicked(R.id.manMenuSuits)
-        }
+        listener?.onManMenuButtonClicked(v.id)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
