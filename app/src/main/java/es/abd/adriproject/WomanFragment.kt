@@ -1,5 +1,6 @@
 package es.abd.adriproject
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +15,16 @@ class WomanFragment : Fragment(), View.OnClickListener {
     private var listener : FragmentWomanListener? = null
 
     private lateinit var binding: FragmentWomanBinding
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentWomanListener) {
+            listener = context
+        } else {
+            throw RuntimeException("$context must implement YourListenerInterface")
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,16 +42,8 @@ class WomanFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        when(v.id){
-            R.id.womanMenuBottom -> listener?.onWomanBottomClicked()
-            R.id.womanMenuJumpsuit -> listener?.onWomanJumpsuitsClicked()
-            R.id.womanMenuCoatsJackets -> listener?.onWomanCoatsJacketsClicked()
-            R.id.womanMenuTops -> listener?.onWomanTopsClicked()
-            R.id.womanMenuDresses -> listener?.onWomanDressesClicked()
-        }
+        listener?.onWomanMenuButtonClicked(v.id)
     }
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.womanMenuBottom.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in1))
@@ -51,11 +54,8 @@ class WomanFragment : Fragment(), View.OnClickListener {
     }
 
     interface FragmentWomanListener{
-        fun onWomanBottomClicked()
-        fun onWomanJumpsuitsClicked()
-        fun onWomanCoatsJacketsClicked()
-        fun onWomanTopsClicked()
-        fun onWomanDressesClicked()
+        fun onWomanMenuButtonClicked(btn: Int)
+
 
     }
 

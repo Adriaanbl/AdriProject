@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 
-class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelectionListener, ManFragment.FragmentManListener {
+class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelectionListener, ManFragment.FragmentManListener, WomanFragment.FragmentWomanListener {
 
     val li: MutableList<Product> = mutableListOf()
 
@@ -69,12 +69,55 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
         supportFragmentManager.commit {
             setReorderingAllowed(true)
+            setCustomAnimations(R.anim.complex_animation, 0, 0, 0)
             replace(R.id.fragment2, recListFragment)
             addToBackStack(null)
 
         }
+    }
+
+    override fun onWomanMenuButtonClicked(btn: Int) {
+        li.clear()
+        when (btn) {
+            R.id.womanMenuBottom -> {
+                li.addAll(
+                    listOf(Product("woman 1", R.drawable.product1, 19.99f),
+                        Product("wimenn 2", R.drawable.product2, 29.99f)
+                    )
+                )
+            }
+            R.id.womanMenuJumpsuit -> {
 
 
+            }
+            R.id.womanMenuCoatsJackets -> {
+                li.addAll(
+                    listOf(Product("woman 1", R.drawable.product1, 19.99f)
+                    )
+                )
+            }
+            R.id.womanMenuTops -> {
 
+            }
+            R.id.womanMenuDresses -> {
+                li.addAll(
+                    listOf(Product("zapas de wimen", R.drawable.product3, 69.99f),
+                    )
+                )
+            }
+            else -> {
+
+            }
+        }
+        productAdapter.updateData(li)
+        val recListFragment = RecListFragment.newInstance(productAdapter)
+
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            setCustomAnimations(R.anim.complex_animation, 0, 0, 0)
+            replace(R.id.fragment2, recListFragment)
+            addToBackStack(null)
+
+        }
     }
 }
