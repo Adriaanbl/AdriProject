@@ -28,6 +28,13 @@ class SelectionFragment : Fragment(), View.OnClickListener {
         return binding.root
     }
 
+    fun openDrawer(view: View) {
+        // Obtener la actividad y abrir el Navigation Drawer
+        if (activity is PrincipalActivity) {
+            (activity as PrincipalActivity).openDrawer()
+        }
+    }
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

@@ -2,12 +2,18 @@ package es.abd.adriproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import es.abd.adriproject.databinding.ActivityPreappBinding
+import es.abd.adriproject.databinding.ActivityPrincipalBinding
 
 class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelectionListener, ManFragment.FragmentManListener, WomanFragment.FragmentWomanListener {
 
     val li: MutableList<Product> = mutableListOf()
+
+    private lateinit var binding: ActivityPrincipalBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +37,20 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
     }
 
+    private fun setUpNavigationDrawer(){
+        val toggle = ActionBarDrawerToggle(
+            this,
+            binding.drawerLayout,
+            binding.myToolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        binding.navigationView.setNavigationItemSelectedListener(this);
+    }
+
     private var productAdapter: ProductAdapter = ProductAdapter(this,li){product ->  }
 
     override fun onManMenuButtonClicked(btn: Int) {
@@ -40,7 +60,10 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
             R.id.manMenuBottom -> {
                 li.addAll(
                     listOf(Product("Bottom 1", R.drawable.product1, 19.99f),
-                        Product("Bottom 2", R.drawable.product2, 29.99f)
+                        Product("Bottom 2", R.drawable.product2, 29.99f),
+                        Product("victor", R.drawable.product3, 02.99f)
+
+
                     )
                 )
             }
@@ -114,8 +137,8 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
         supportFragmentManager.commit {
             setReorderingAllowed(true)
-            setCustomAnimations(R.anim.complex_animation, 0, 0, 0)
             replace(R.id.fragment2, recListFragment)
+            setCustomAnimations(R.anim.complex_animation, 0, 0, 0)
             addToBackStack(null)
 
         }
