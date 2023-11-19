@@ -2,7 +2,9 @@ package es.abd.adriproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import es.abd.adriproject.databinding.ActivityPreappBinding
@@ -29,11 +31,11 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
 
     override fun onManButtonClicked() {
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                replace<ManFragment>(R.id.fragment2)
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            replace<ManFragment>(R.id.fragment2)
 
-            }
+        }
 
     }
 
@@ -41,7 +43,6 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         val toggle = ActionBarDrawerToggle(
             this,
             binding.drawerLayout,
-            binding.myToolbar,
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
@@ -49,6 +50,19 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         toggle.syncState()
 
         binding.navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        //Close the navigation drawer
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
+
+        return when(item.itemId){
+            R.id.fragment2 -> {
+                true
+            }
+            else -> false
+        }
+
     }
 
     private var productAdapter: ProductAdapter = ProductAdapter(this,li){product ->  }
