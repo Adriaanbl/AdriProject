@@ -24,16 +24,11 @@ class SelectionFragment : Fragment(), View.OnClickListener {
 
         binding.womanButton.setOnClickListener(this)
         binding.manButton.setOnClickListener(this)
+        binding.navigationButton.setOnClickListener(this)
 
         return binding.root
     }
 
-    fun openDrawer(view: View) {
-        // Obtener la actividad y abrir el Navigation Drawer
-        if (activity is PrincipalActivity) {
-            (activity as PrincipalActivity).openDrawer()
-        }
-    }
 
 
     override fun onAttach(context: Context) {
@@ -45,17 +40,18 @@ class SelectionFragment : Fragment(), View.OnClickListener {
         }
     }
 
-
-
     override fun onClick(v: View) {
         when(v.id){
             R.id.womanButton -> listener?.onWomanButtonClicked()
             R.id.manButton -> listener?.onManButtonClicked()
+            R.id.navigationButton -> listener?.onNavigationButtonClicked()
         }
     }
     interface FragmentSelectionListener{
         fun onWomanButtonClicked()
         fun onManButtonClicked()
+        fun onNavigationButtonClicked()
+
 
     }
 

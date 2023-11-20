@@ -17,5 +17,9 @@
     <string name="Tracksuits">SURVÊTEMENTS</string>
     <string name="Bottoms">BAS</string>
     <string name="Jumpsuits">COMBINAISONS</string>
+    <string name="gmailInput">Gmail</string>
+    <string name="repeatPass">" Répéter Mot de passe"</string>
+    <string name="SnackloginError">" Identifiants incorrects ou utilisateur inexistant"</string>
+    <string name="SnackRegisterError">" Les mots de passe ne correspondent pas ou données interdites."</string>
 
 </resources>

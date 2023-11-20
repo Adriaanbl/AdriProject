@@ -4,16 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/fondosalmon">
+    android:background="@color/lightcoral">
 
     <ImageView
         android:id="@+id/drawer_icon"
-        android:layout_width="85dp"
-        android:layout_height="80dp"
+        android:layout_width="206dp"
+        android:layout_height="127dp"
 
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:src="@drawable/ic_launcher_foreground"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/wadtitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,14 +28,15 @@
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/drawer_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/drawer_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/drawer_icon"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/drawer_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="60dp"
         android:paddingBottom="25dp"
         android:text="adriblascod@gmail.com"
         android:textColor="@color/white"

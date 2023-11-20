@@ -8,11 +8,11 @@
         <item
             android:id="@+id/ic_camera"
             android:title="camera"
-            android:icon="@drawable/ic_camera"/>
+            android:icon="@drawable/ic_launcher_foreground"/>
         <item
             android:id="@+id/ic_gallery"
             android:title="gallery"
-            android:icon="@drawable/ic_gallery"/>
+            android:icon="@drawable/ic_launcher_foreground"/>
     </group>
 
     <group android:checkableBehavior="single"
@@ -20,7 +20,7 @@
         <item
             android:id="@+id/ic_tools"
             android:title="tools"
-            android:icon="@drawable/ic_tools"/>
+            android:icon="@drawable/ic_launcher_foreground"/>
 
     </group>
 
@@ -30,11 +30,11 @@
             <item
                 android:id="@+id/ic_share"
                 android:title="share"
-                android:icon="@drawable/ic_share"/>
+                android:icon="@drawable/ic_launcher_foreground"/>
             <item
                 android:id="@+id/ic_send"
                 android:title="send"
-                android:icon="@drawable/ic_send"/>
+                android:icon="@drawable/ic_launcher_foreground"/>
             </group>
         </menu>
     </item>

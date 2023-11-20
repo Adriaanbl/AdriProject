@@ -1,16 +1,19 @@
 package es.abd.adriproject
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import es.abd.adriproject.databinding.ActivityPreappBinding
+import com.google.android.material.navigation.NavigationView
 import es.abd.adriproject.databinding.ActivityPrincipalBinding
 
-class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelectionListener, ManFragment.FragmentManListener, WomanFragment.FragmentWomanListener {
+class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelectionListener, ManFragment.FragmentManListener, WomanFragment.FragmentWomanListener,
+    NavigationView.OnNavigationItemSelectedListener {
 
     val li: MutableList<Product> = mutableListOf()
 
@@ -19,7 +22,10 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_principal)
+        binding =ActivityPrincipalBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setUpNavigationDrawer()
     }
 
     override fun onWomanButtonClicked() {
@@ -39,6 +45,11 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
     }
 
+    override fun onNavigationButtonClicked() {
+
+        binding.drawerLayout.openDrawer(GravityCompat.START)
+    }
+
     private fun setUpNavigationDrawer(){
         val toggle = ActionBarDrawerToggle(
             this,
@@ -52,12 +63,22 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         binding.navigationView.setNavigationItemSelectedListener(this);
     }
 
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            onBackPressedDispatcher.onBackPressed()
+        }
+    }
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        //Close the navigation drawer
+
         binding.drawerLayout.closeDrawer(GravityCompat.START)
 
         return when(item.itemId){
             R.id.fragment2 -> {
+                Toast.makeText(this, "Information saved correctly", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> false

@@ -17,5 +17,9 @@
     <string name="Tracksuits">TRACKSUITS</string>
     <string name="Bottoms">BOTTOMS</string>
     <string name="Jumpsuits">JUMPSUITS</string>
+    <string name="gmailInput">Gmail</string>
+    <string name="repeatPass">Repeat Password</string>
+    <string name="SnackloginError">"Incorrect credentials or non-existent user.  "</string>
+    <string name="SnackRegisterError">Passwords do not match or forbidden data.</string>
 
 </resources>

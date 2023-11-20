@@ -17,5 +17,9 @@
     <string name="Tracksuits">CONJUNTOS DEPORTIVOS</string>
     <string name="Bottoms">PARTES INFERIORES</string>
     <string name="Jumpsuits">MONOS</string>
+    <string name="gmailInput">Gmail</string>
+    <string name="repeatPass">Repite Contraseña</string>
+    <string name="SnackloginError">Credenciales incorrectas o usuario no existente</string>
+    <string name="SnackRegisterError">Contraseñas no coinciden o datos no permitidos</string>
 
 </resources>
