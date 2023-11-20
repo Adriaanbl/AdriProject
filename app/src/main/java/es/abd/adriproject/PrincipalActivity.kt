@@ -80,11 +80,11 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
 
         return when(item.itemId){
             R.id.ic_cart -> {
-                Toast.makeText(this, "Information saved correctly", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Shopping cart", Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.ic_helpQuestions -> {
-                Toast.makeText(this, "Information saved correctly", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Help & Questions", Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.ic_account -> {
@@ -95,7 +95,9 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
                 true
             }
             R.id.ic_logout -> {
-                Toast.makeText(this, "Information saved correctly", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
+                RegisterFragment.removeUser()
+                onBackPressedDispatcher.onBackPressed()
                 true
             }
             else -> false
@@ -110,7 +112,16 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         li.clear()
         when (btn) {
             R.id.manMenuBottom -> {
+                li.addAll(
+                    listOf(Product("pokemon suit", R.drawable.bot1, 69.99f),
+                        Product("pokemon suit", R.drawable.bot2, 149.99f),
+                        Product("pokemon suit", R.drawable.bot3, 57.99f),
+                        Product("pokemon suit", R.drawable.bot4, 45.55f),
+                        Product("pokemon suit", R.drawable.bot5, 99.99f),
+                        Product("pokemon suit", R.drawable.bot6, 29.19f),
 
+                        )
+                )
             }
             R.id.manMenuTracksuits -> {
                 li.addAll(
@@ -137,7 +148,16 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
                 )
             }
             R.id.manMenuTops -> {
+                li.addAll(
+                    listOf(Product("pokemon suit", R.drawable.top1, 69.99f),
+                        Product("pokemon suit", R.drawable.top2, 149.99f),
+                        Product("pokemon suit", R.drawable.top3, 57.99f),
+                        Product("pokemon suit", R.drawable.top4, 45.55f),
+                        Product("pokemon suit", R.drawable.top5, 99.99f),
+                        Product("pokemon suit", R.drawable.top6, 29.19f),
 
+                        )
+                )
             }
             R.id.manMenuSuits -> {
                 li.addAll(
@@ -158,6 +178,8 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         productAdapter.updateData(li)
         val recListFragment = RecListFragment.newInstance(productAdapter)
 
+
+
         supportFragmentManager.commit {
             setReorderingAllowed(true)
             setCustomAnimations(R.anim.complex_animation, 0, 0, 0)
@@ -171,20 +193,65 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         li.clear()
         when (btn) {
             R.id.womanMenuBottom -> {
+                li.addAll(
+                    listOf(Product("pokemon suit", R.drawable.wbot1, 69.99f),
+                        Product("pokemon suit", R.drawable.wbot2, 149.99f),
+                        Product("pokemon suit", R.drawable.wbot3, 57.99f),
+                        Product("pokemon suit", R.drawable.wbot4, 45.55f),
+                        Product("pokemon suit", R.drawable.wbot5, 99.99f),
+                        Product("pokemon suit", R.drawable.wbot6, 29.19f),
 
+                        )
+                )
             }
             R.id.womanMenuJumpsuit -> {
+                li.addAll(
+                    listOf(Product("pokemon suit", R.drawable.jump1, 69.99f),
+                        Product("pokemon suit", R.drawable.jump2, 149.99f),
+                        Product("pokemon suit", R.drawable.jump3, 57.99f),
+                        Product("pokemon suit", R.drawable.jump4, 45.55f),
+                        Product("pokemon suit", R.drawable.jump5, 99.99f),
+                        Product("pokemon suit", R.drawable.jump6, 29.19f),
 
+                        )
+                )
 
             }
             R.id.womanMenuCoatsJackets -> {
+                li.addAll(
+                    listOf(Product("pokemon suit", R.drawable.wcoat1, 69.99f),
+                        Product("pokemon suit", R.drawable.wjack1, 149.99f),
+                        Product("pokemon suit", R.drawable.wcoat2, 57.99f),
+                        Product("pokemon suit", R.drawable.wjack2, 45.55f),
+                        Product("pokemon suit", R.drawable.wcoat3, 99.99f),
+                        Product("pokemon suit", R.drawable.wjack3, 29.19f),
 
+                        )
+                )
             }
             R.id.womanMenuTops -> {
+                li.addAll(
+                    listOf(Product("pokemon suit", R.drawable.wtop1, 69.99f),
+                        Product("pokemon suit", R.drawable.wtop2, 149.99f),
+                        Product("pokemon suit", R.drawable.wtop3, 57.99f),
+                        Product("pokemon suit", R.drawable.wtop4, 45.55f),
+                        Product("pokemon suit", R.drawable.wtop5, 99.99f),
+                        Product("pokemon suit", R.drawable.wtop6, 29.19f),
 
+                        )
+                )
             }
             R.id.womanMenuDresses -> {
+                li.addAll(
+                    listOf(Product("pokemon suit", R.drawable.dres1, 69.99f),
+                        Product("pokemon suit", R.drawable.dres2, 149.99f),
+                        Product("pokemon suit", R.drawable.dres3, 57.99f),
+                        Product("pokemon suit", R.drawable.dres4, 45.55f),
+                        Product("pokemon suit", R.drawable.dres5, 99.99f),
+                        Product("pokemon suit", R.drawable.dres6, 29.19f),
 
+                        )
+                )
             }
             else -> {
 
@@ -219,4 +286,5 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
             else -> return super.onOptionsItemSelected(item)
         }
     }
+
 }

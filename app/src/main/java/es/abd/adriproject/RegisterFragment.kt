@@ -97,6 +97,10 @@ class RegisterFragment : Fragment(), View.OnClickListener {
         fun getUser(): User {
             return registeredUsers[0]
         }
+
+        fun removeUser(){
+            registeredUsers.removeAt(0)
+        }
     }
 
 
