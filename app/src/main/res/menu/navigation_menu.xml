@@ -6,35 +6,32 @@
     <group android:checkableBehavior="single"
         android:id="@+id/group1">
         <item
-            android:id="@+id/ic_camera"
-            android:title="camera"
-            android:icon="@drawable/ic_launcher_foreground"/>
-        <item
-            android:id="@+id/ic_gallery"
-            android:title="gallery"
-            android:icon="@drawable/ic_launcher_foreground"/>
+            android:id="@+id/ic_cart"
+            android:title="@string/shoppingCart"
+            android:icon="@drawable/cart"/>
+
     </group>
 
     <group android:checkableBehavior="single"
         android:id="@+id/group2">
         <item
-            android:id="@+id/ic_tools"
-            android:title="tools"
-            android:icon="@drawable/ic_launcher_foreground"/>
+            android:id="@+id/ic_helpQuestions"
+            android:title="@string/helpQst"
+            android:icon="@drawable/help"/>
 
     </group>
 
-    <item android:title="group">
+    <item android:title="@string/Account">
         <menu>
             <group android:checkableBehavior="single">
             <item
-                android:id="@+id/ic_share"
-                android:title="share"
-                android:icon="@drawable/ic_launcher_foreground"/>
+                android:id="@+id/ic_account"
+                android:title="@string/Account"
+                android:icon="@drawable/account"/>
             <item
-                android:id="@+id/ic_send"
-                android:title="send"
-                android:icon="@drawable/ic_launcher_foreground"/>
+                android:id="@+id/ic_logout"
+                android:title="@string/LogOut"
+                android:icon="@drawable/logout"/>
             </group>
         </menu>
     </item>

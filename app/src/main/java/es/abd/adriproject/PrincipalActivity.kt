@@ -3,6 +3,7 @@ package es.abd.adriproject
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -24,6 +25,7 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         super.onCreate(savedInstanceState)
         binding =ActivityPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         setUpNavigationDrawer()
     }
@@ -77,7 +79,22 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         binding.drawerLayout.closeDrawer(GravityCompat.START)
 
         return when(item.itemId){
-            R.id.fragment2 -> {
+            R.id.ic_cart -> {
+                Toast.makeText(this, "Information saved correctly", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.ic_helpQuestions -> {
+                Toast.makeText(this, "Information saved correctly", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.ic_account -> {
+                supportFragmentManager.commit {
+                    setReorderingAllowed(true)
+                    replace<AccountFragment>(R.id.actPrincipal)
+                }
+                true
+            }
+            R.id.ic_logout -> {
                 Toast.makeText(this, "Information saved correctly", Toast.LENGTH_SHORT).show()
                 true
             }
@@ -114,7 +131,7 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
             }
             R.id.manMenuSuits -> {
                 li.addAll(
-                    listOf(Product("zapas", R.drawable.product3, 69.99f),
+                    listOf(Product("pokemon suit", R.drawable.suit1, 69.99f),
                     )
                 )
             }
@@ -176,6 +193,24 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
             setCustomAnimations(R.anim.complex_animation, 0, 0, 0)
             addToBackStack(null)
 
+        }
+    }
+
+
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.settings_activity_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_settings -> {
+
+                return true
+            }
+
+            else -> return super.onOptionsItemSelected(item)
         }
     }
 }

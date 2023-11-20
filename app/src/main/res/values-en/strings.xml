@@ -21,5 +21,14 @@
     <string name="repeatPass">Repeat Password</string>
     <string name="SnackloginError">"Incorrect credentials or non-existent user.  "</string>
     <string name="SnackRegisterError">Passwords do not match or forbidden data.</string>
+    <string name="Account">Account</string>
+    <string name="LogOut">Log out</string>
+    <string name="helpQst">Help / Questions</string>
+    <string name="shoppingCart">Shopping Cart</string>
+    <string name="AccUserTxt">Username   -></string>
+    <string name="AccEmailTxt">Email   -></string>
+    <string name="AccPassTxt">Password   -></string>
+    <string name="AccText1">Personal Information</string>
+    <string name="AccText2">Notification preferences</string>
 
 </resources>

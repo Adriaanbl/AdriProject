@@ -78,9 +78,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
     }
 
     interface fragmentRegisterListener{
-        fun onRegFragmentbtn(){
-            print("a")
-        }
+        fun onRegFragmentbtn()
     }
 
     companion object {
@@ -94,6 +92,10 @@ class RegisterFragment : Fragment(), View.OnClickListener {
 
         fun addUser(user: User) {
             registeredUsers.add(user)
+        }
+
+        fun getUser(): User {
+            return registeredUsers[0]
         }
     }
 

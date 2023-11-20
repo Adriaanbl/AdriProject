@@ -21,5 +21,14 @@
     <string name="repeatPass">Repite Contraseña</string>
     <string name="SnackloginError">Credenciales incorrectas o usuario no existente</string>
     <string name="SnackRegisterError">Contraseñas no coinciden o datos no permitidos</string>
+    <string name="Account">Cuenta</string>
+    <string name="LogOut">Cerrar sesión</string>
+    <string name="helpQst">Ayuda y preguntas</string>
+    <string name="shoppingCart">Carrito de la compra</string>
+    <string name="AccUserTxt">Nombre de usuario -></string>
+    <string name="AccEmailTxt">Email   -></string>
+    <string name="AccPassTxt">Contraseña   -></string>
+    <string name="AccText1">Informacion personal</string>
+    <string name="AccText2">Preferencias de notificaciones</string>
 
 </resources>

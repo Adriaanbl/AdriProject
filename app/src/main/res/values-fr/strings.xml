@@ -21,5 +21,14 @@
     <string name="repeatPass">" Répéter Mot de passe"</string>
     <string name="SnackloginError">" Identifiants incorrects ou utilisateur inexistant"</string>
     <string name="SnackRegisterError">" Les mots de passe ne correspondent pas ou données interdites."</string>
+    <string name="Account">Profil d\'utilisateur</string>
+    <string name="LogOut">Déconnecter</string>
+    <string name="helpQst">Aide et Questions</string>
+    <string name="shoppingCart">Panier d\'achat</string>
+    <string name="AccUserTxt">Nom d\'utilisateur</string>
+    <string name="AccEmailTxt">Email   -></string>
+    <string name="AccPassTxt">Mot de passe   -></string>
+    <string name="AccText1">Informations personnelles</string>
+    <string name="AccText2">Préférences de notification</string>
 
 </resources>
