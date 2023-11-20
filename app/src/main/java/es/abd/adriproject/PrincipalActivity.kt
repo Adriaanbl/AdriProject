@@ -110,21 +110,31 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         li.clear()
         when (btn) {
             R.id.manMenuBottom -> {
-                li.addAll(
-                    listOf(Product("Bottom 1", R.drawable.product1, 19.99f),
-                        Product("Bottom 2", R.drawable.product2, 29.99f),
-                        Product("victor", R.drawable.product3, 02.99f)
 
-
-                    )
-                )
             }
             R.id.manMenuTracksuits -> {
+                li.addAll(
+                    listOf(Product("pokemon suit", R.drawable.track1, 69.99f),
+                        Product("pokemon suit", R.drawable.track2, 149.99f),
+                        Product("pokemon suit", R.drawable.track3, 57.99f),
+                        Product("pokemon suit", R.drawable.track4, 45.55f),
+                        Product("pokemon suit", R.drawable.track5, 99.99f),
+                        Product("pokemon suit", R.drawable.track6, 29.19f),
 
-
+                        )
+                )
             }
             R.id.manMenuCoatsJackets -> {
+                li.addAll(
+                    listOf(Product("pokemon suit", R.drawable.coat1, 69.99f),
+                        Product("pokemon suit", R.drawable.jacket1, 149.99f),
+                        Product("pokemon suit", R.drawable.coat2, 57.99f),
+                        Product("pokemon suit", R.drawable.jacket2, 45.55f),
+                        Product("pokemon suit", R.drawable.coat3, 99.99f),
+                        Product("pokemon suit", R.drawable.jacket3, 29.19f),
 
+                        )
+                )
             }
             R.id.manMenuTops -> {
 
@@ -161,30 +171,20 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
         li.clear()
         when (btn) {
             R.id.womanMenuBottom -> {
-                li.addAll(
-                    listOf(Product("woman 1", R.drawable.product1, 19.99f),
-                        Product("wimenn 2", R.drawable.product2, 29.99f)
-                    )
-                )
+
             }
             R.id.womanMenuJumpsuit -> {
 
 
             }
             R.id.womanMenuCoatsJackets -> {
-                li.addAll(
-                    listOf(Product("woman 1", R.drawable.product1, 19.99f)
-                    )
-                )
+
             }
             R.id.womanMenuTops -> {
 
             }
             R.id.womanMenuDresses -> {
-                li.addAll(
-                    listOf(Product("zapas de wimen", R.drawable.product3, 69.99f),
-                    )
-                )
+
             }
             else -> {
 
