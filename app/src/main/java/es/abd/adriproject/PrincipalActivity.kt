@@ -132,6 +132,12 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
             R.id.manMenuSuits -> {
                 li.addAll(
                     listOf(Product("pokemon suit", R.drawable.suit1, 69.99f),
+                        Product("pokemon suit", R.drawable.suit2, 149.99f),
+                        Product("pokemon suit", R.drawable.suit3, 57.99f),
+                        Product("pokemon suit", R.drawable.suit4, 45.55f),
+                        Product("pokemon suit", R.drawable.suit5, 99.99f),
+                        Product("pokemon suit", R.drawable.suit6, 29.19f),
+
                     )
                 )
             }
