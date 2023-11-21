@@ -39,13 +39,13 @@ class RegisterFragment : Fragment(), View.OnClickListener {
 
         val videoView = binding.videoView
         val videoPath = "android.resource://" + requireContext().packageName + "/" + R.raw.backvideoregister
-        videoView.setVideoURI(Uri.parse(videoPath))
-        videoView.setOnPreparedListener { mp ->
+        videoView?.setVideoURI(Uri.parse(videoPath))
+        videoView?.setOnPreparedListener { mp ->
             mp.isLooping = true
         }
 
 
-        videoView.start()
+        videoView?.start()
 
         binding.btnRegfragment.setOnClickListener(this)
 

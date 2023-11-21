@@ -1,12 +1,10 @@
 package es.abd.adriproject
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
@@ -15,10 +13,9 @@ import androidx.fragment.app.replace
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import es.abd.adriproject.databinding.ActivityPrincipalBinding
-import org.w3c.dom.Text
 
 class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelectionListener, ManFragment.FragmentManListener, WomanFragment.FragmentWomanListener,
-    NavigationView.OnNavigationItemSelectedListener,DialogFragment.dialogFragmentListener {
+    NavigationView.OnNavigationItemSelectedListener,DialogFragment.DialogFragmentListener {
 
     val li: MutableList<Product> = mutableListOf()
 
@@ -113,9 +110,8 @@ class PrincipalActivity : AppCompatActivity(), SelectionFragment.FragmentSelecti
     private var productAdapter: ProductAdapter = ProductAdapter(this,li){product ->
 
         val dialog = DialogFragment(product)
-        dialog.view?.findViewById<TextView>(R.id.dialogTitle)?.text = product.productName
 
-        dialog.show(supportFragmentManager,"my_dialog")
+        dialog.show(supportFragmentManager,"Buying dialog")
 
     }
 

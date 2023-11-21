@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_start_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartPageFragment">
+
+
+    <ImageView
+        android:id="@+id/principalBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondohor"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <Button
+        android:id="@+id/LoginButton"
+        style="@style/gradient_button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="72dp"
+        android:gravity="center"
+        android:text="@string/LoginButton"
+        android:textAlignment="center"
+        android:theme="@style/PrincipalTheme"
+        app:layout_constraintTop_toTopOf="@+id/principalBackground"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/RegisterButton"
+        style="@style/gradient_button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:text="@string/RegisterButton"
+        android:textAlignment="center"
+        android:theme="@style/PrincipalTheme"
+        app:layout_constraintTop_toBottomOf="@+id/LoginButton"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/NotLoggedButton"
+        style="@style/gradient_button"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="68dp"
+        android:gravity="center"
+        android:text="@string/NotLoggedButton"
+        android:textAlignment="center"
+        android:theme="@style/PrincipalTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegisterButton"
+        app:layout_constraintVertical_bias="0.472"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

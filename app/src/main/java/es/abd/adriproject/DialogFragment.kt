@@ -4,72 +4,57 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+
 import androidx.fragment.app.DialogFragment
 import es.abd.adriproject.databinding.FragmentDialogBinding
+import es.abd.adriproject.databinding.FragmentLoginBinding
 
 
-class DialogFragment : DialogFragment() {
-
-
-    private var listener : dialogFragmentListener? = null
-
+class DialogFragment(product: Product) : DialogFragment(){
+    private lateinit var mListener: DialogFragmentListener
     private lateinit var binding: FragmentDialogBinding
+    private val prod = product
 
+    interface DialogFragmentListener{
+        fun onDialogPositiveClick()
+        fun onDialogNegativeClick()
 
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        if (context is dialogFragmentListener){
-            listener = context
-        }else {
-            throw Exception("Error adrian blasco doria")
+        if(context is DialogFragmentListener){
+            mListener = context
+        }else{
+            throw Exception("Your fragment or activity must implement the interface FirstDialogListener")
         }
-
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        binding = FragmentDialogBinding.inflate(layoutInflater, container, false)
-
-        DialogFragment().show(requireActivity().supportFragmentManager, "Buying dialog")
-
-        return binding.root
+        binding.priceDialog.text = prod.price.toString()
+        binding.dialogTitle.text = "prod.productName"
+        binding.prdImgDialog.setImageResource(prod.image)
 
     }
-
-
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             val builder = AlertDialog.Builder(it)
 
             val inflater = requireActivity().layoutInflater
-            val view = inflater.inflate(R.layout.fragment_dialog, null)
-
-
             builder
-                .setView(view)
-                .setNegativeButton(getString(R.string.cancelBuyBtn)) { _, _ ->
-                    listener?.onDialogNegativeClick()
+                .setView(inflater.inflate(R.layout.fragment_dialog,null))
+                .setPositiveButton(getString(R.string.buyButton)) { dialog, id ->
+                    mListener.onDialogPositiveClick()
+
                 }
-                .setPositiveButton(getString(R.string.buyButton)) { _, _ ->
-                    listener?.onDialogPositiveClick()
+                .setNegativeButton(getString(R.string.cancelBuyBtn)) {dialog, id ->
+                    mListener.onDialogNegativeClick()
                 }
             builder.create()
-        } ?: throw IllegalStateException("Activity can not be null")
+        } ?: throw java.lang.IllegalStateException("Activity cant be null")
     }
-
-    interface dialogFragmentListener{
-        fun onDialogPositiveClick()
-        fun onDialogNegativeClick()
-    }
-
 }

@@ -39,13 +39,13 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
         val videoView = binding.videoView
         val videoPath = "android.resource://" + requireContext().packageName + "/" + R.raw.backvideo
-        videoView.setVideoURI(Uri.parse(videoPath))
-        videoView.setOnPreparedListener { mp ->
+        videoView?.setVideoURI(Uri.parse(videoPath))
+        videoView?.setOnPreparedListener { mp ->
             mp.isLooping = true
         }
 
 
-        videoView.start()
+        videoView?.start()
 
         binding.btnLogfragment.setOnClickListener(this)
 
