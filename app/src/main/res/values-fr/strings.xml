@@ -30,5 +30,7 @@
     <string name="AccPassTxt">Mot de passe   -></string>
     <string name="AccText1">Informations personnelles</string>
     <string name="AccText2">Préférences de notification</string>
+    <string name="buyButton">ACHETER</string>
+    <string name="cancelBuyBtn">ANNULER</string>
 
 </resources>

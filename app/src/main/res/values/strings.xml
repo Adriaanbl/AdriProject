@@ -36,5 +36,7 @@
     <string name="AccPassTxt">Password   -></string>
     <string name="AccText1">Personal Information</string>
     <string name="AccText2">Notification preferences</string>
+    <string name="buyButton">BUY</string>
+    <string name="cancelBuyBtn">CANCEL</string>
 
 </resources>
